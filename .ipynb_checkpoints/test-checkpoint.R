@@ -1,38 +1,20 @@
-setwd("D:/OneDrive - UBC/Desktop/ENAR Data Fest")
+setwd("D:/OneDrive - UBC/Desktop/ENAR Data Fest") # Change to yours
 
-ds <- nhanes_data
+packages <- c("dplyr", "haven","ggplot2")
 
-library(dplyr)
-library(haven)
+install_if_missing <- function(pkg) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg)
+  }
+  library(pkg, character.only = TRUE)
+}
 
-ds1 <- ds %>% 
-  select(bp_sys_mean, bp_dia_mean, htn_jnc7, htn_accaha)
-head(ds1)
-summary(ds$svy_id
-)
+lapply(packages, install_if_missing)
 
-ds2 <- read_xpt("DRXIFF_B.xpt")
-summary(ds2$SEQN)
+ds <- read.csv("Data/nhanes_data.csv")
 
-ds %>% group_by(svy_year) %>% 
-  summarise(ds$svy_id)
+ds99 <- filter(ds, svy_year == "1999-2000")
 
-ds %>%
-  group_by(svy_year) %>%
-  summarise(
-    min_svy_id = min(svy_id, na.rm = TRUE),
-    max_svy_id = max(svy_id, na.rm = TRUE),
-    unique_ids = n_distinct(svy_id)
-  )
+ds2 <- read_xpt("Data/DR1TOT_A.xpt")
 
-ds3 <-  read_xpt("DRXIFF_B.xpt")
-summary(ds3$SEQN)
-
-ds31 <- read_xpt("DR1IFF_C.xpt")
-ds32 <- read_xpt("DR2IFF_C.xpt")
-
-summary(ds31$SEQN)
-length(ds31$SEQN)
-
-summary(ds32$SEQN)
-length(ds32$SEQN)
+merge_df <- merge(ds99, ds2, by.x = "svy_id", by.y = "SEQN")
