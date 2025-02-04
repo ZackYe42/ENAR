@@ -1,0 +1,10 @@
+svy_id
+demo_age_cat
+demo_race
+demo_race_black
+demo_age_years
+demo_pregnant
+demo_gender
+bp_sys_mean
+bp_dia_mean
+cc_bmi
