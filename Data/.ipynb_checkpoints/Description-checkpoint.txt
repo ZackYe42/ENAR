@@ -1,0 +1,11 @@
+DR1TOT_* Dietary Interview - Total Nutrient Intakes
+DR1TOT_A 1999-2000
+DR1TOT_B 2001-2002
+......
+DR1TOT_I 2015-2016
+DR1TOT_J 2017-2020
+
+
+
+A: DRXTWATE - Moisture (gm)
+B-J: DR1TMOIS - Moisture (gm)
