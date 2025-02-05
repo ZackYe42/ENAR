@@ -5,7 +5,10 @@ DR1TOT_B 2001-2002
 DR1TOT_I 2015-2016
 DR1TOT_J 2017-2020
 
-
-
 A: DRXTWATE - Moisture (gm)
 B-J: DR1TMOIS - Moisture (gm)
+
+
+var9902: selected variable list for 1999 - 2002
+var0304: selected variable list for 2003 - 2004
+var0520: selected variable list for 2005 - 2020
