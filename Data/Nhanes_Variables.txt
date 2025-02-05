@@ -1,4 +1,5 @@
 svy_id
+svy_year
 demo_age_cat
 demo_race
 demo_race_black
